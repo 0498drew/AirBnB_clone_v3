@@ -21,21 +21,6 @@ def teardown(self):
     """Removes the current SQLAlchemy Session"""
     return storage.close()
 
-
-@app.errorhandler(404)
-def error(e):
-    """Handler for 404 errors"""
-    return jsonify({"error": "Not found"}), 404
-
-
-app.config['SWAGGER'] = {
-    'title': 'AirBnB clone Restful API',
-    'uiversion': 3
-}
-
-Swagger(app)
-
-
 if __name__ == '__main__':
     host = getenv("HBNB_API_HOST") if getenv("HBNB_API_HOST") else "0.0.0.0"
     port = getenv("HBNB_API_PORT") if getenv("HBNB_API_PORT") else 5000
