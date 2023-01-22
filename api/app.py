@@ -36,4 +36,3 @@ if __name__ == "__main__":
     hostt = '0.0.0.0' if not hostt else hostt
     portt = 5000 if not portt else portt
     app.run(host=hostt, port=portt, threaded=True)
-   
